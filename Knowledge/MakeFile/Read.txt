@@ -1,0 +1,7 @@
+Makefile 普通累计添加.c编译可执行文件
+Makefile_T 指定文件夹下全部.c文件编译
+Makefile_Test .PHONY 运用对应依赖可以是多个目标
+Makefie_test_D  export test="11" make -f Makefie_test_D testb=aa 环境变量的使用和参数传递
+Makefie_testabspath  abspath函数应用
+Makefile_So_A 编译动静态库模板
+Makefile_useSo 动态库的使用

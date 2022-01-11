@@ -1,0 +1,6 @@
+CFLAGS = $(test)
+T = -Dtestb = $(testb)
+
+test:
+	@echo $(CFLAGS)
+	@echo $(testb) 

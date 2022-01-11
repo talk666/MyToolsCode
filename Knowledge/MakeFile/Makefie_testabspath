@@ -1,0 +1,6 @@
+TESTPATH = $(abspath ./)
+
+TEST = build
+TESTPATH = $(abspath $(TEST))
+test:
+	@echo $(TESTPATH)
