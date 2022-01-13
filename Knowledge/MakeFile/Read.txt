@@ -5,3 +5,5 @@ Makefie_test_D  export test="11" make -f Makefie_test_D testb=aa 环境变量的
 Makefie_testabspath  abspath函数应用
 Makefile_So_A 编译动静态库模板
 Makefile_useSo 动态库的使用
+
+build.mk 一个makefile调用多个makefile模板 可代替脚本
