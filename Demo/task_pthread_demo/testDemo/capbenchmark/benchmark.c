@@ -137,10 +137,10 @@ void Task_test(void *hdev)
 {   
     uint64_t i, *loop_count;
     uint64_t *loop_status = shm_get_global_loop_status();
-    uint64_t *param = (uint64_t *)hdev;
+    uint64_t param = (int)hdev;
     for (i = 0; (i < g_benchmark.loop) && (*loop_status); ++i)
     {
-      //  printf("param:%d\r\n", *param);
+       printf("param:%d\r\n", param);
       //TODO
     }
     /* record the loop count for performance statistics */
@@ -152,7 +152,7 @@ void Task_test(void *hdev)
 }
 
 void *TestFun(void* param)
-{   
+{  
     Task_test(param);
 
     atomic_inc(&thread_cnt);
@@ -243,7 +243,7 @@ go:
 
             for (int tnum = 0; tnum < g_benchmark.thread_num; ++tnum)
             {
-                int ret = pthread_create(&tid, NULL, TestFun, &testparam);
+                int ret = pthread_create(&tid, NULL, TestFun, testparam);
                 if(ret != 0)
                 {
                     printf("creat  pthread error. ret = %d\n", ret);
