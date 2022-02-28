@@ -1,7 +1,7 @@
 ccflags-y += -std=gnu9x -Wall -Wno-unused-function -Wno-unused-variable -Wno-format
 
 ifneq ($(KERNELRELEASE),)
-        obj-m := kill.o
+        obj-m := memory.o
 else
         KERNELDIR ?= /lib/modules/$(shell uname -r)/build
         PWD := $(shell pwd)
@@ -11,4 +11,4 @@ default:
 endif
 
 clean:
-	rm -f *.o *.ko Module.symvers modules.order *.mod.c .*.cmd
+	rm -f *.o *.ko Module.symvers modules.order *.mod.c .*.cmd *.out
