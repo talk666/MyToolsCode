@@ -1,0 +1,10 @@
+
+configure: error: missing libraries: libncurses
+ 
+
+1
+# yum install ncurses-devel
+ 重新编译安装：
+
+1
+# ./configure && make && make install
