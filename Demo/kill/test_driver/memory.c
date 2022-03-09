@@ -103,6 +103,7 @@ static int memory_release(struct inode *inode, struct file *filp)
 
 static ssize_t memory_read(struct file *filp, char *buf, size_t count, loff_t *f_pos)
 {
+	printk("<1> RR secceed!\r\n");
 	copy_to_user(buf, memory_buffer, 1);
 	if(*f_pos == 0)
 	{
@@ -115,6 +116,7 @@ static ssize_t memory_read(struct file *filp, char *buf, size_t count, loff_t *f
 
 ssize_t memory_write(struct file *filp, char *buf, size_t count, loff_t *f_pos)
 {
+	printk("<1>WW secceed!\r\n");
 	char *tmp;
 	tmp = buf + count -1;
 	copy_from_user(memory_buffer,tmp,1);
