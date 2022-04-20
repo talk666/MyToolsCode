@@ -3,16 +3,25 @@
 
 int  main()
 {
-  
-      const unsigned char data[7]="ABCDEF";
-      unsigned char md[16]={0};
+  while (1) {
 
- //MD5(data,strlen((const char *)data),md);
-      MD5(data, 6, md);
-      int i;
-      for(i = 0;i < 16;i++) {
-        printf("%02x-", *(md + i));
+    const unsigned char data[] = {};
+    printf("insert string\r\n");
+    scanf("%s",data);
+
+    printf("len = %d\r\n", strlen(data));
+    unsigned char md[16] = { 0 };
+
+
+    MD5(data, strlen(data), md);
+    int i;
+    printf("string: %s, MD5:",data);
+    for (i = 0;i < 16;i++) {
+      printf("%02X", *(md + i));
     }
+    
+    printf("\r\n\r\n\r\n");
+    usleep(5000);
+  }
     return 0;
-
 }
